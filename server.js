@@ -1,0 +1,36 @@
+/////////////////////////////////
+// import dependencies
+/////////////////////////////////
+// this allows us to load our env variables
+require('dotenv').config()
+const express = require('express')
+const app = require("liquid-express-views")(express())
+const WeatherRouter = require('./controllers/weather')
+const middleware = require('./utils/middleware')
+
+
+////////////////////////////////////////////
+// Create our express application object
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+// Middleware
+////////////////////////////////////////////
+middleware(app)
+
+
+////////////////////////////////////////////
+// Routes
+////////////////////////////////////////////
+// register our routes here
+// send all '/weather' routes to the Weather Router
+app.use('/weather', WeatherRouter)
+
+
+////////////////////////////////////////////
+// Server Listener
+////////////////////////////////////////////
+const PORT = process.env.PORT
+app.listen(PORT, () => {
+    console.log(`app is listening on port: ${PORT}`)
+})
