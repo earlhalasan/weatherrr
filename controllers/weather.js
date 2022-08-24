@@ -16,10 +16,9 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const zip = req.body.zip;
+  const requestURL =
+    "api.openweathermap.org/data/2.5/weather?zip={ZIP CODE},us&units=imperial&appid={API KEY}";
 });
-
-const requestURL =
-  "api.openweathermap.org/data/2.5/weather?zip={ZIP CODE},us&units=imperial&appid={API KEY}";
 
 ////////////////////////////////////////////
 // Export the Router
