@@ -14,11 +14,11 @@
     </form>
 
     <div class="weather">
-      <h3>City: ???</h3>
-      <h3 class="temp">Current Temperature: ???</h3>
-      <h3>Weather Description: ???</h3>
-      <h3>Minimum Temperature: ???</h3>
-      <h3>Maximum Temperature: ???</h3>
+      <h3>City: {{ weatherData.name }}</h3>
+      <h3 class="temp">Current Temperature: {{ weatherData.main.temp }}</h3>
+      <h3>Weather Description: {{ weatherData.weather[0].description }}</h3>
+      <h3>Minimum Temperature: {{ weatherData.main.temp_min }}</h3>
+      <h3>Maximum Temperature: {{ weatherData.main.temp_max }}</h3>
     </div>
   </body>
 </html>

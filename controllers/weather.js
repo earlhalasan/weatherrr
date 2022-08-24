@@ -25,6 +25,11 @@ router.post("/", (req, res) => {
     .then((jsonData) => {
       console.log("Here is the weather data", jsonData);
       const weatherData = jsonData;
+      res.render("show", { weatherData });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json({ error });
     });
 });
 
