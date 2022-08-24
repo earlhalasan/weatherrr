@@ -16,8 +16,16 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const zip = req.body.zip;
-  const requestURL =
-    "api.openweathermap.org/data/2.5/weather?zip={ZIP CODE},us&units=imperial&appid={API KEY}";
+  const requestURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=62652b0e412b7b86fc32d5631e6bec48`;
+  fetch(requestURL)
+    .then((apiResponse) => {
+      console.log("api weather call yurrr", zip);
+      return apiResponse.json();
+    })
+    .then((jsonData) => {
+      console.log("Here is the weather data", jsonData);
+      const weatherData = jsonData;
+    });
 });
 
 ////////////////////////////////////////////
