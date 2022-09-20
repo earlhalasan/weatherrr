@@ -4,21 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Weather App</title>
   </head>
   <body>
-    <h1>Weather App</h1>
-    <form action="/weather" method="POST">
-      <input type="text" name="zip" placeholder="Enter Zip Code" />
-      <input type="submit" />
-    </form>
+    <div class="flex place-content-center">
+      <h1 class="text-3xl">Weather</h1>
+      <form action="/weather" method="POST">
+        <input
+          type="text"
+          name="zip"
+          placeholder="Enter Zip Code"
+          class="my-3"
+        /><br />
+        <input
+          type="submit"
+          class="border-2 border-blue-500 px-2 py-0.5 rounded-3xl bg-blue-500 text-white hover:bg-blue-400 hover:border-blue-400"
+        />
+      </form>
 
-    <div class="weather">
-      <h3>City: {{ weatherData.name }}</h3>
-      <h3 class="temp">Current Temperature: {{ weatherData.main.temp }}</h3>
-      <h3>Weather Description: {{ weatherData.weather[0].description }}</h3>
-      <h3>Minimum Temperature: {{ weatherData.main.temp_min }}</h3>
-      <h3>Maximum Temperature: {{ weatherData.main.temp_max }}</h3>
+      <div class="weather">
+        <h3>City: {{ weatherData.name }}</h3>
+        <h3 class="temp">Current Temperature: {{ weatherData.main.temp }}</h3>
+        <h3>Weather Description: {{ weatherData.weather[0].description }}</h3>
+        <h3>Minimum Temperature: {{ weatherData.main.temp_min }}</h3>
+        <h3>Maximum Temperature: {{ weatherData.main.temp_max }}</h3>
+      </div>
     </div>
   </body>
 </html>
