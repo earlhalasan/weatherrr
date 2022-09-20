@@ -15,15 +15,20 @@
         </div>
 
         <div class="weather">
-          <h3 class="text-4xl font-semibold pb-2">{{ weatherData.name }}</h3>
-          <h3 class="temp text-6xl">{{ weatherData.main.temp }}°</h3>
-          <h3>Weather Description: {{ weatherData.weather[0].description }}</h3>
+          <h3 class="text-3xl font-light pb-2">{{ weatherData.name }}</h3>
+          <h3 class="temp text-6xl font-bold">
+            {{ weatherData.main.temp | round }}°
+          </h3>
+          <h3 class="pt-2 pb-3 capitalize">
+            {{ weatherData.weather[0].description }}
+          </h3>
           <p>
-            Low: {{ weatherData.main.temp_min }}° High:
-            {{ weatherData.main.temp_max }}°
+            High:
+            {{ weatherData.main.temp_max | round }}° Low:
+            {{ weatherData.main.temp_min | round }}°
           </p>
         </div>
-        <div class="py-4">
+        <div class="pt-1">
           <form action="/weather" method="POST">
             <input
               type="text"
