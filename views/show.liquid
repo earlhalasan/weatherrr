@@ -9,19 +9,25 @@
   </head>
   <body>
     <div class="flex place-content-center">
-      <h1 class="text-3xl">Weather</h1>
-      <form action="/weather" method="POST">
-        <input
-          type="text"
-          name="zip"
-          placeholder="Enter Zip Code"
-          class="my-3"
-        /><br />
-        <input
-          type="submit"
-          class="border-2 border-blue-500 px-2 py-0.5 rounded-3xl bg-blue-500 text-white hover:bg-blue-400 hover:border-blue-400"
-        />
-      </form>
+      <div>
+        <div class="pb-8">
+          <h1 class="text-3xl">Weather</h1>
+        </div>
+        <div>
+          <form action="/weather" method="POST">
+            <input
+              type="text"
+              name="zip"
+              placeholder="Enter Zip Code"
+              class="my-3"
+            /><br />
+            <input
+              type="submit"
+              class="border-2 border-blue-500 px-2 py-0.5 rounded-3xl bg-blue-500 text-white hover:bg-blue-400 hover:border-blue-400"
+            />
+          </form>
+        </div>
+      </div>
 
       <div class="weather">
         <h3>City: {{ weatherData.name }}</h3>
