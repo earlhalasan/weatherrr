@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/9be3c30446.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
       tailwind.config = {
         darkMode: "class",
@@ -19,7 +23,13 @@
         class="text-xs bg-gray-200 dark:bg-gray-800 rounded-xl p-1.5 m-1"
         onclick="document.body.classList.toggle('dark')"
       >
-        Dark
+        <!-- when button clicked change "Dark" to "Light" -->
+        <span class="dark:hidden"
+          ><i class="fa-solid fa-circle-half-stroke"></i
+        ></span>
+        <span class="hidden dark:inline"
+          ><i class="fa-solid fa-circle-half-stroke"></i
+        ></span>
       </button>
     </div>
     <div class="h-screen dark:bg-[#0E172A] dark:text-white">
