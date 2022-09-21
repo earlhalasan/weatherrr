@@ -10,13 +10,22 @@
         darkMode: "class",
       };
     </script>
-    <title>Weather App</title>
+    <title>Weather</title>
   </head>
-  <body class="dark">
-    <div class="h-screen dark:bg-black dark:text-white">
+  <body class="">
+    <!-- dark mode toggle -->
+    <div class="flex place-content-end dark:bg-[#0E172A] dark:text-white">
+      <button
+        class="text-xs bg-gray-200 dark:bg-gray-800 rounded-xl p-1.5 m-1"
+        onclick="document.body.classList.toggle('dark')"
+      >
+        Dark
+      </button>
+    </div>
+    <div class="h-screen dark:bg-[#0E172A] dark:text-white">
       <div class="flex place-content-center">
         <div class="text-center">
-          <div class="pt-5 pb-1">
+          <div class="pt-0 pb-1">
             <!-- <h1 class="text-xl">Weather</h1> -->
           </div>
 
@@ -40,7 +49,7 @@
                 type="text"
                 name="zip"
                 placeholder="Enter Zip Code"
-                class="my-3 text-center"
+                class="my-3 text-center rounded-md"
               /><br />
               <input
                 type="submit"
